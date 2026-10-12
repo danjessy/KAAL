@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>Calculateur de notes · BUT GEII</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">G<span>·</span></div>
+    <div><p class="eyebrow">BUT 1 · GEII · 2026–2027</p><h1>Calculateur de notes</h1></div>
+    <div class="save-state" id="saveState"><span class="dot"></span> Sauvegarde locale activée</div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <p class="eyebrow">TON TABLEAU DE BORD</p>
+        <h2>Les notes, sans les calculs à la main.</h2>
+        <p class="muted">Saisis tes moyennes de ressources et de SAÉ. Les moyennes des UE se mettent à jour automatiquement.</p>
+      </div>
+      <div class="privacy"><span>⌁</span><div><strong>Enregistré sur cet appareil</strong><small>Pas de compte, pas de serveur.</small></div></div>
+    </section>
+
+    <nav class="semester-tabs" aria-label="Semestre">
+      <button class="tab active" data-semester="s1">Semestre 1 <small>UE 1.1 · UE 1.2</small></button>
+      <button class="tab" data-semester="s2">Semestre 2 <small>UE 2.1 · UE 2.2</small></button>
+    </nav>
+
+    <section class="summary-grid" id="summary"></section>
+    <section class="section-heading"><div><p class="eyebrow">SAISIE DES MOYENNES</p><h2 id="semesterTitle">Semestre 1</h2></div><span class="pill">Notes sur 20</span></section>
+    <p class="hint">Laisse un champ vide si tu ne connais pas encore la note. Les notes manquantes ne sont pas comptées comme des zéros.</p>
+    <div id="subjects" class="subject-list"></div>
+
+    <section class="bottom-tools">
+      <div><h3>Ta progression, à ton rythme.</h3><p class="muted">Les notes restent dans le stockage local de ce navigateur.</p></div>
+      <div class="tool-buttons">
+        <button class="button secondary" id="exportBtn">Exporter mes notes</button>
+        <label class="button secondary file-label">Importer<input type="file" id="importFile" accept="application/json"></label>
+        <button class="button danger" id="resetBtn">Tout effacer</button>
+      </div>
+    </section>
+    <p class="footnote">Coefficients issus du règlement des études et de la scolarité BUT 1 GEII, tronc commun, formation initiale, 2026–2027 (pages 4–5). Ce calculateur estime les moyennes des UE à partir des moyennes saisies ; il ne calcule pas la compensation entre UE.</p>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
